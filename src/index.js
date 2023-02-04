@@ -1,6 +1,7 @@
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
+import { fetchCountries } from './js/fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
 
@@ -20,12 +21,7 @@ function onInput(e) {
     resetSearchResults();
     return;
   }
-  fetch(
-    `https://restcountries.com/v3.1/name/${countryName}?fields=name,capital,population,languages,flags`
-  )
-    .then(response => {
-      return response.json();
-    })
+  fetchCountries(countryName)
     .then(country => {
       console.log(`🚀 ~ onInput ~ country`, country.length);
       if (country.length === 1) {
@@ -66,7 +62,7 @@ function markupList(country) {
   return country
     .map(
       ({ name, flags }) =>
-        `<li class="country-info__item"><img src="${flags.svg}" alt="${name.official}" width="25">${name.official}</li>`
+        `<li class="country-list__item"><img src="${flags.svg}" alt="${name.official}" width="25">${name.official}</li>`
     )
     .join('');
 }
