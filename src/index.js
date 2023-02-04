@@ -73,11 +73,11 @@ function markupItem(country) {
       `<h1 class="country-info__country"><img src="${flags.svg}" alt="${
         name.official
       }" width="25">${name.official}</h1> 
-      <p class="country-info__capital">Capital: ${capital[0]}</p>
-      <p class="country-info__population">Population: ${population}</p>
-      <p class="country-info__languages-list">Languages: ${Object.values(
+      <p class="country-info__capital">Capital: <span>${capital[0]}</span></p>
+      <p class="country-info__population">Population: <span>${population}</span></p>
+      <p class="country-info__languages-list">Languages: <span>${Object.values(
         languages
-      )}</p>`
+      )}</span></p>`
   );
 }
 

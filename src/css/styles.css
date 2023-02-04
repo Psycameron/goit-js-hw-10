@@ -26,3 +26,31 @@ body {
 .country-list__item:not(:last-child) {
   margin-bottom: 10px;
 }
+
+.country-info__title img {
+  margin-right: 15px;
+}
+.country-info__name {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.country-info__name span {
+  font-weight: 400;
+}
+
+.country-list {
+  list-style: none;
+}
+
+.country-list__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.country-list__item img {
+  margin-right: 15px;
+}
